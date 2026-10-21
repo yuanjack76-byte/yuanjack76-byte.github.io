@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8"><title>Authorization Callback</title>
+<style>body{font-family:monospace;margin:40px}code{font-size:20px;word-break:break-all;background:#f2f2f2;padding:8px;display:block}</style>
+</head>
+<body>
+<h1>Authorization code</h1>
+<p>Copy the code below and send it back to finish signing in:</p>
+<code id="code">(no code found in URL)</code>
+<p id="full"></p>
+<script>
+var p = new URLSearchParams(location.search);
+var c = p.get('code');
+if (c) {
+  document.getElementById('code').textContent = c;
+  document.getElementById('full').textContent = 'Full callback URL: ' + location.href;
+}
+</script>
+</body>
+</html>
